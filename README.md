@@ -1,1 +1,1 @@
-# DIY Stream Deck
+# Nextion 2.4"
