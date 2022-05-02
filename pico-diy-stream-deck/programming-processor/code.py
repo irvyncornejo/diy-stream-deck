@@ -14,11 +14,13 @@ from adafruit_hid.keycode import Keycode
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.consumer_control import ConsumerControl
 from adafruit_hid.consumer_control_code import ConsumerControlCode
+from rgb import RGB
 
 #Objects
 keyboard=Keyboard(usb_hid.devices)
 consumer_control=ConsumerControl(usb_hid.devices)
 serial=busio.UART(board.GP4, board.GP5, baudrate=9600)#UART1
+rgb = RGB()
 
 def get_operating_system(page: int ,component: int) -> str:
     pass
@@ -41,7 +43,9 @@ def define_action(page: int ,component: int) -> None:
     
 
 if __name__ == '__main__':
+    rgb.off_rgb()
     while True:
+        rgb.turn_on({'red':32000,'blue':40000,'green':65535})
         try:
             data=serial.read(7)#number of bytes b'e\x00\x02\x01\xff\xff\xff'
             if len(data) == 7:
