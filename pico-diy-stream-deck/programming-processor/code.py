@@ -1,7 +1,7 @@
 """
 Description: DIY Stream Deck
 Board: Raspberry Pi Pico with rp2040
-Display: NX3224T024
+Display: NX3224T024 yellow = Rx | Blue = Tx
 """
 from time import sleep
 
@@ -19,8 +19,15 @@ from rgb import RGB
 #Objects
 keyboard=Keyboard(usb_hid.devices)
 consumer_control=ConsumerControl(usb_hid.devices)
-serial=busio.UART(board.GP4, board.GP5, baudrate=9600)#UART1
+serial=busio.UART(board.GP4, board.GP5, baudrate=9600)#UART1 tx - rx
 rgb = RGB()
+
+colors = {
+    '1': 'red',
+    '2': 'green',
+    '3': 'blue',
+    '4': {'red':32000,'blue':40000,'green':65535}
+}
 
 def get_operating_system(page: int ,component: int) -> str:
     pass
@@ -40,12 +47,18 @@ def define_action(page: int ,component: int) -> None:
         keyboard.send(Keycode.WINDOWS, Keycode.E)
     if page==0 and component==6:
         keyboard.send(Keycode.CONTROL, Keycode.ALT, Keycode.P)
-    
+    if page==1 and component==3:
+        rgb.off_rgb()
+        rgb.blink_rgb()
+    if page==2:
+        rgb.off_rgb()
+        color = colors[str(component)]
+        rgb.turn_on(color)
+        
 
 if __name__ == '__main__':
     rgb.off_rgb()
     while True:
-        rgb.turn_on({'red':32000,'blue':40000,'green':65535})
         try:
             data=serial.read(7)#number of bytes b'e\x00\x02\x01\xff\xff\xff'
             if len(data) == 7:
