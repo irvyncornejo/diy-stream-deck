@@ -10,11 +10,11 @@
 
 ### [Código](https://github.com/irvyncornejo/nextion-display/tree/main/pico-diy-stream-deck/programming-processor)
 
-![img_1](https://github.com/irvyncornejo/nextion-display/tree/main/pico-diy-stream-deck/result/1.jpeg)
+![img_1](https://github.com/irvyncornejo/nextion-display/blob/main/pico-diy-stream-deck/src/result/1.jpeg)
 
-![img_1](https://github.com/irvyncornejo/nextion-display/tree/main/pico-diy-stream-deck/result/2.jpeg)
+![img_1](https://github.com/irvyncornejo/nextion-display/blob/main/pico-diy-stream-deck/src/result/2.jpeg)
 
-![img_1](https://github.com/irvyncornejo/nextion-display/tree/main/pico-diy-stream-deck/result/3.jpeg)
+![img_1](https://github.com/irvyncornejo/nextion-display/blob/main/pico-diy-stream-deck/src/result/3.jpeg)
 
   
 ## ARDUINO-DISPLAY-IOT
