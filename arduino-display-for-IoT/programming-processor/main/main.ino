@@ -4,25 +4,17 @@
  * Placa -> Aruino Nano
  * Shield -> Kaanbal V1.0
  * Display -> NX3224T024
+ * WIFI -> ESP8266
 */
 #include <Wire.h> 
 #include <Servo.h>
 #include "chimalli.h"
-
-
-bool flagRelay1 = false;
-bool flagMotorA = false;
-String valueSensor;
-Servo servoMotor;
-
-Motor motorA = Motor(A0, A1);
-Relay relay1 = Relay(4);
-TemperatureSensor  sensorTemp1 = TemperatureSensor(A6);
+#include "hmi.h"
+#include "request.h"
 
 
 void setup(){
   Serial.begin(9600);
-  servoMotor.attach(8);
 }
 
 void loop(){

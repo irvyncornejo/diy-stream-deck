@@ -1,5 +1,5 @@
-
 class Relay{
+  /*3-5-6-9-10-11*/
   public:
     int pin;
   Relay(int number){
@@ -10,13 +10,13 @@ class Relay{
     digitalWrite(pin, ref);
   }
   void pwmValue(int value){
-    /*3-5-6-9-10-11*/
-    analogWrite(pin value);
+    analogWrite(pin, value);
   }
 };
 
 
 class TemperatureSensor{
+   /*A5-A6*/
   public:
     int pin;
   TemperatureSensor(int number){
@@ -31,6 +31,7 @@ class TemperatureSensor{
 
 
 class Motor{
+  /*A0-A4*/
   public:
     int pinA;
     int pinB;
@@ -44,6 +45,8 @@ class Motor{
     if(valueA != valueB){
       digitalWrite(pinA, valueA);
       digitalWrite(pinB, valueB);
+    }else{
+      // TODO send error configuraction
     }
   }
   void toStop(){
@@ -53,5 +56,9 @@ class Motor{
 };
 
 class Buzzer{
-  //TODO 
+  //TODO
+};
+
+class ServoMotor{
+  // TOD0
 };
