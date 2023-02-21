@@ -1,4 +1,4 @@
-from Applications import Applications
+from .aplications import Applications
 
 
 if __name__=='__main__':
