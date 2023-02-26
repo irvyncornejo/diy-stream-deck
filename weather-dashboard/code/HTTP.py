@@ -26,4 +26,3 @@ class HTTP:
     
     def post(self):
         pass
-    
